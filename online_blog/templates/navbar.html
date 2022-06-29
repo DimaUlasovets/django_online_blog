@@ -1,0 +1,27 @@
+{% load static %}
+<header class="header">
+  <div class="container container--narrow">
+    <nav class="header__nav">
+      <input type="checkbox" id="responsive-menu" />
+      <label for="responsive-menu" class="toggle-menu">
+        <span>Menu</span>
+        <div class="toggle-menu__lines"></div>
+      </label>
+      <ul class="header__menu">
+        <li class="header__menuItem"><a href="{% url 'profiles' %}">Home</a></li>
+        <li class="header__menuItem"><a href="{% url 'posts' %}">Posts</a></li>
+        <li class="header__menuItem"><a href="{% url 'profiles' %}">Autors</a></li>
+
+        {% if request.user.is_authenticated %}
+        <li class="header__menuItem"><a href="{% url 'account' %}">Account </a></li>
+        <li class="header__menuItem"><a href="{% url 'logout' %}" class="btn btn--sub">Logout</a></li>
+
+        {% else %}
+        <li class="header__menuItem"><a href="{% url 'login' %}" class="btn btn--sub">Login</a></li>
+        <li class="header__menuItem"><a href="{% url 'signup' %}" class="btn btn--sub">Sign Up</a></li>
+        {% endif %}
+
+      </ul>
+    </nav>
+  </div>
+</header>

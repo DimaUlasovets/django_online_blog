@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "django_online_blog"
+version = "0.1.0"
+description = ""
+authors = ["Dima Ulasovets <d.ulasovets@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+Django = "^4.0.4"
+
+[tool.poetry.dev-dependencies]
+pre-commit = "^2.19.0"
+flake8 = "^4.0.1"
+psycopg2 = "^2.9.3"
+python-dotenv = "^0.20.0"
+Pillow = "^9.1.1"
+whitenoise = "^6.2.0"
+ipython = "^8.4.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

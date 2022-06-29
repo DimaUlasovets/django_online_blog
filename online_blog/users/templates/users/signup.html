@@ -1,0 +1,20 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<div class="auth">
+  <div class="card">
+    <div class="auth__header text-center">
+      <h3>Sign up</h3>
+      <p>Select below the type of account you want to create</p>
+    </div>
+    <a href="{% url 'autor_signup' %}" class="btn btn-student btn-lg" role="button">I'm a Autor</a>
+    <a href="{% url 'reader_signup' %}" class="btn btn-teacher btn-lg" role="button">I'm a Reader</a>
+    <div class="auth__alternative">
+      <p>Already have an Account?</p>
+      <a href="{% url 'login' %}">Log In</a>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

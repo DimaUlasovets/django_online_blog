@@ -1,0 +1,53 @@
+{% extends "main.html" %}
+
+{% block content %}
+
+<div class="auth">
+    <div class="card">
+      <div class="auth__header text-center">
+        <h3>Account SignUp</h3>
+        <p>Create a new author account</p>
+      </div>
+
+      <form method="POST" action="{% url 'autor_signup' %}" class="form auth__form">
+        {% csrf_token %}
+
+        {% for field in form %}
+
+            <div class="form__field"><label for="formInput#text">{{field.label}}</label>
+
+                {{field}}
+
+                <!-- {% if field.help_text %}
+
+                    <small>{{field.help_text}}</small>
+
+                {% endif %} -->
+
+                {% for error in field.errors %}
+
+                    <p style="color: red;">{{error}}</p>
+
+                {% endfor %}
+
+            </div>
+
+        {% endfor %}
+
+        <div class="auth__actions">
+          <input class="btn btn--sub btn--lg" type="submit" value="Sign  In" />
+        </div>
+
+      </form>
+
+      <div class="auth__alternative">
+        <p>Already have an Account?</p>
+        <a href="{% url 'login' %}">Log In</a>
+      </div>
+
+    </div>
+</div>
+
+
+
+{% endblock content %}
